@@ -9,17 +9,16 @@ class App extends Component {
     this.state = {userName: "Avanish"};
   }
 
-  handleuserNameChange(event) {
-    console.log("handle change");
+  handleuserNameChange(event) {   
     this.setState({
       userName: event.target.value
     });
   } 
 
   render() {return (    <div className="App">
-      <UserInput change={this.handleuserNameChange.bind(this)} />
-      <UserOutput text1="user1" text2 = "user1" username={this.state.userName}/>
-      <UserOutput text1="user2" text2 = "user2" username={this.state.userName} />
+      <UserInput changed={this.handleuserNameChange.bind(this)} name={this.state.userName}/>
+      <UserOutput  username={this.state.userName}/>
+      <UserOutput  username={this.state.userName} />
     </div>
   )};
 }
